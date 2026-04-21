@@ -1,0 +1,235 @@
+/* =========================
+   CSS VARIABLES + FALLBACK
+========================= */
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: hsl(210, 70%, 50%);
+  --bg-color: color-mix(in srgb, white 90%, #e0e0e0);
+}
+
+/* =========================
+   UNIVERSAL SELECTOR
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   ELEMENT + SELECTOR LIST
+========================= */
+body, main {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: var(--bg-color, #ffffff);
+  margin: 0;
+}
+
+/* =========================
+   ID SELECTOR
+========================= */
+#top {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   CLASS SELECTOR
+========================= */
+.highlight {
+  color: orange;
+}
+
+/* =========================
+   ATTRIBUTE SELECTOR
+========================= */
+input[type="text"] {
+  border: 2px solid #ccc;
+}
+
+/* =========================
+   COMBINING SELECTORS
+========================= */
+section.highlight {
+  background-color: rgba(255, 200, 0, 0.2);
+}
+
+/* =========================
+   DESCENDANT COMBINATOR
+========================= */
+section h2 {
+  color: var(--primary-color, black);
+}
+
+/* =========================
+   CHILD COMBINATOR
+========================= */
+header > h1 {
+  font-size: 2.5rem; /* relative unit */
+}
+
+/* =========================
+   ADJACENT SIBLING
+========================= */
+h2 + p {
+  font-style: italic;
+}
+
+/* =========================
+   GENERAL SIBLING
+========================= */
+h2 ~ ul {
+  border-left: 4px solid var(--accent-color);
+}
+
+/* =========================
+   :HAS() SELECTOR (NEW)
+========================= */
+section:has(h3) {
+  background-color: #f4f8fb;
+}
+
+/* =========================
+   NESTED SELECTORS (NEW)
+========================= */
+nav {
+  & ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  & a {
+    text-decoration: none;
+    color: var(--accent-color);
+  }
+}
+
+/* =========================
+   TEXT STYLING
+========================= */
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  color: rgb(44, 62, 80);
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+/* =========================
+   BOX MODEL (LONG + SHORT)
+========================= */
+
+/* Margin */
+section {
+  margin-top: 20px;   /* absolute unit px */
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 20px auto 20px auto; /* shorthand */
+}
+
+/* Padding */
+section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding: 10px 1rem; /* shorthand */
+}
+
+/* Border */
+section {
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 2px;
+  border-radius: 8px;
+}
+
+/* =========================
+   DISPLAY
+========================= */
+nav li {
+  display: inline-block;
+}
+
+span {
+  display: inline;
+}
+
+/* =========================
+   SIZING
+========================= */
+main {
+  max-width: 800px;
+  min-width: 300px;
+  width: 80%;
+}
+
+/* =========================
+   POSITION
+========================= */
+header {
+  position: sticky;
+  top: 0;
+}
+
+footer {
+  position: relative;
+}
+
+/* =========================
+   FLEXBOX
+========================= */
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* =========================
+   GRID
+========================= */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.5rem;
+}
+
+/* =========================
+   PSEUDO-CLASSES
+========================= */
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: purple;
+}
+
+/* =========================
+   MEDIA QUERY (RESPONSIVE)
+========================= */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* =========================
+   UNITS USED
+========================= */
+/* Relative: rem, %, em */
+/* Absolute: px, cm (below), pt */
+
+hr {
+  width: 10cm; /* absolute unit */
+  height: 2pt; /* absolute unit */
+}
