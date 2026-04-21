@@ -3,8 +3,15 @@
 ========================= */
 :root {
   --primary-color: #2c3e50;
+
   --accent-color: hsl(210, 70%, 50%);
+  --nav-bg: hsl(210, 40%, 20%);
+  --nav-text: #ffffff;
+
+  --content-max-width: 900px;
+
   --bg-color: color-mix(in srgb, white 90%, #e0e0e0);
+  --text-color: rgb(33, 33, 33);
 }
 
 /* =========================
@@ -21,13 +28,6 @@ body, main {
   font-family: 'Roboto', Arial, sans-serif;
   background-color: var(--bg-color, #ffffff);
   margin: 0;
-}
-
-/* =========================
-   ID SELECTOR
-========================= */
-#top {
-  scroll-behavior: smooth;
 }
 
 /* =========================
@@ -148,13 +148,6 @@ section {
   border-radius: 8px;
 }
 
-/* =========================
-   DISPLAY
-========================= */
-nav li {
-  display: inline-block;
-}
-
 span {
   display: inline;
 }
@@ -232,24 +225,6 @@ a:active {
 hr {
   width: 10cm; /* absolute unit */
   height: 2pt; /* absolute unit */
-}
-
-/* =========================
-   CSS VARIABLES + FALLBACKS
-   (for consistent theme control)
-========================= */
-:root {
-  --nav-bg: hsl(210, 40%, 20%);
-  --nav-accent: rgb(77, 163, 255);
-  --nav-hover: color-mix(in srgb, #4da3ff 70%, white 30%);
-  --nav-text: #ffffff;
-}
-
-/* =========================
-   UNIVERSAL SELECTOR
-========================= */
-* {
-  box-sizing: border-box;
 }
 
 /* =========================
@@ -362,13 +337,6 @@ nav a {
   text-decoration: none;
 }
 
-/* =========================
-   DISPLAY (REQUIRED VARIETY)
-========================= */
-nav li {
-  display: inline-block;
-}
-
 nav ul {
   display: flex;
 }
@@ -479,21 +447,6 @@ footer {
   }
 }
 
-/* =========================
-   VARIABLES + FALLBACKS
-========================= */
-:root {
-  --content-max-width: 900px;
-  --content-bg: color-mix(in srgb, #ffffff 90%, #e6e6e6 10%);
-  --text-color: rgb(33, 33, 33);
-}
-
-/* =========================
-   UNIVERSAL SELECTOR
-========================= */
-* {
-  box-sizing: border-box;
-}
 
 /* =========================
    ELEMENT SELECTOR
@@ -523,13 +476,6 @@ main {
 ========================= */
 main, section {
   display: block;
-}
-
-/* =========================
-   ID SELECTOR
-========================= */
-#top {
-  scroll-behavior: smooth;
 }
 
 /* =========================
