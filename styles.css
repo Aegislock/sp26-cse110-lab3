@@ -172,7 +172,7 @@ main {
    POSITION
 ========================= */
 header {
-  position: sticky;
+  position: static;
   top: 0;
 }
 
