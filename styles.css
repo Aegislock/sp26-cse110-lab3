@@ -233,3 +233,248 @@ hr {
   width: 10cm; /* absolute unit */
   height: 2pt; /* absolute unit */
 }
+
+/* =========================
+   CSS VARIABLES + FALLBACKS
+   (for consistent theme control)
+========================= */
+:root {
+  --nav-bg: hsl(210, 40%, 20%);
+  --nav-accent: rgb(77, 163, 255);
+  --nav-hover: color-mix(in srgb, #4da3ff 70%, white 30%);
+  --nav-text: #ffffff;
+}
+
+/* =========================
+   UNIVERSAL SELECTOR
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   ELEMENT SELECTOR
+========================= */
+nav {
+  background-color: var(--nav-bg, #222);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+}
+
+/* =========================
+   SELECTOR LIST
+========================= */
+nav, header {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* =========================
+   ID SELECTOR
+========================= */
+#top {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   CLASS SELECTOR
+========================= */
+.nav-item {
+  list-style: none;
+}
+
+/* =========================
+   ATTRIBUTE SELECTOR
+========================= */
+a[href^="#"] {
+  color: var(--nav-text);
+}
+
+/* =========================
+   COMBINING SELECTORS
+========================= */
+nav ul.nav-item {
+  display: flex;
+  gap: 1.2rem;
+}
+
+/* =========================
+   DESCENDANT COMBINATOR
+========================= */
+nav ul li a {
+  text-decoration: none;
+  color: var(--nav-text, white);
+}
+
+/* =========================
+   CHILD COMBINATOR
+========================= */
+nav > h2 {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   GENERAL SIBLING COMBINATOR
+========================= */
+nav h2 ~ ul {
+  margin-top: 0.5rem;
+}
+
+/* =========================
+   ADJACENT SIBLING COMBINATOR
+========================= */
+h2 + ul {
+  border-top: 2px solid #4da3ff;
+}
+
+/* =========================
+   :HAS() NEW SELECTOR
+========================= */
+nav:has(a:hover) {
+  background-color: color-mix(in srgb, #1a1a1a 80%, #4da3ff 20%);
+}
+
+/* =========================
+   NESTED SELECTORS
+========================= */
+nav {
+  & a {
+    transition: all 0.2s ease;
+  }
+
+  & a:hover {
+    color: orange;
+    text-decoration: underline;
+  }
+
+  & a:active {
+    color: purple;
+  }
+}
+
+/* =========================
+   TEXT STYLING
+========================= */
+nav a {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* =========================
+   DISPLAY (REQUIRED VARIETY)
+========================= */
+nav li {
+  display: inline-block;
+}
+
+nav ul {
+  display: flex;
+}
+
+/* =========================
+   SIZING (RELATIVE + ABSOLUTE UNITS)
+========================= */
+nav {
+  width: 100%;
+  max-width: 1200px;   /* absolute */
+  min-width: 300px;
+  padding: 1rem;       /* relative + absolute mix */
+  font-size: 1.2rem;   /* relative unit */
+}
+
+/* =========================
+   BOX MODEL
+========================= */
+
+/* Margin (longhand) */
+nav {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Margin (shorthand) */
+nav {
+  margin: 10px auto;
+}
+
+/* Padding (longhand) */
+nav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Padding (shorthand) */
+nav {
+  padding: 1rem 2rem;
+}
+
+/* Border */
+nav {
+  border-style: solid;
+  border-color: #4da3ff;
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+/* =========================
+   FLEXBOX (PRIMARY LAYOUT)
+   MUST HAVE >2 CHILDREN
+========================= */
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* =========================
+   GRID (SECOND LAYOUT SYSTEM)
+========================= */
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* =========================
+   PSEUDO-CLASSES
+========================= */
+nav a:hover {
+  color: var(--nav-hover, orange);
+}
+
+nav a:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   POSITIONING (2 TYPES)
+========================= */
+nav {
+  position: sticky;
+  top: 0;
+}
+
+footer {
+  position: relative;
+}
+
+/* =========================
+   RESPONSIVENESS (MEDIA QUERY)
+========================= */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    font-size: 1rem;
+  }
+}
